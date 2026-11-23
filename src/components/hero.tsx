@@ -77,11 +77,11 @@ export function Hero() {
           </button>
 
           <Link
-            href="/fiyat-hesapla"
+            href="/organizasyon-konseptleri"
             className="rounded-full border border-amber-400/40 bg-neutral-900/80 px-8 py-4 text-sm font-semibold tracking-wider text-white shadow-lg backdrop-blur-md hover:border-amber-400 hover:bg-neutral-800 transition-all flex items-center gap-2"
           >
             <Sparkles className="h-4 w-4 text-amber-400" />
-            <span>Düğün Bütçesi Hesapla</span>
+            <span>Organizasyon Konseptlerini Keşfet</span>
             <ChevronRight className="h-4 w-4 text-neutral-400" />
           </Link>
         </motion.div>
@@ -98,8 +98,8 @@ export function Hero() {
             <div className="mt-1 text-xs text-neutral-400 font-medium">Maksimum Davetli Kapasitesi</div>
           </div>
           <div className="rounded-2xl border border-white/10 bg-neutral-900/60 p-5 backdrop-blur-md">
-            <div className="font-serif text-3xl sm:text-4xl font-semibold text-amber-300">3 Konsept</div>
-            <div className="mt-1 text-xs text-neutral-400 font-medium">Balo, Kır & Boğaz Teras</div>
+            <div className="font-serif text-3xl sm:text-4xl font-semibold text-amber-300">3 Salon & 7 Konsept</div>
+            <div className="mt-1 text-xs text-neutral-400 font-medium">Kişiye Özel Senaryolar</div>
           </div>
           <div className="rounded-2xl border border-white/10 bg-neutral-900/60 p-5 backdrop-blur-md">
             <div className="font-serif text-3xl sm:text-4xl font-semibold text-white">1.250+</div>

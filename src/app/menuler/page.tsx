@@ -95,10 +95,10 @@ export default function MenusPage() {
 
                 <div className="mt-8 pt-5 border-t border-white/10">
                   <Link
-                    href={`/fiyat-hesapla`}
+                    href="/organizasyon-konseptleri"
                     className="w-full rounded-xl bg-gradient-to-r from-amber-400 to-amber-300 py-3 text-center text-xs font-bold text-neutral-950 shadow-md hover:brightness-110 active:scale-98 transition-all block"
                   >
-                    Bu Menüyle Fiyat Hesapla
+                    Bu Menüye Uygun Konseptleri Gör
                   </Link>
                 </div>
               </div>

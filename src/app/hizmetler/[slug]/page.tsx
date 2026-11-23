@@ -133,11 +133,11 @@ export default async function ServiceDetailPage({ params }: Props) {
                   </a>
 
                   <Link
-                    href="/fiyat-hesapla"
+                    href="/organizasyon-konseptleri"
                     className="w-full rounded-xl border border-white/10 bg-neutral-800 py-3 text-center text-xs font-semibold text-neutral-200 hover:text-white hover:border-amber-400 transition-colors flex items-center justify-center gap-2 block"
                   >
                     <Sparkles className="h-4 w-4 text-amber-400" />
-                    <span>Düğün Bütçesine Ekle</span>
+                    <span>Organizasyon Konseptlerini Keşfet</span>
                   </Link>
 
                   <a

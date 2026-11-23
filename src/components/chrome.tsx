@@ -247,17 +247,17 @@ export function Footer() {
           {/* Hizmetler & Menüler */}
           <div className="lg:col-span-3">
             <h4 className="text-xs font-bold uppercase tracking-widest text-amber-400 mb-4">
-              Ayrıcalıklar & Menü
+              Konseptler & Ayrıcalıklar
             </h4>
             <ul className="space-y-2.5 text-sm text-neutral-400">
               <li>
-                <Link href="/menuler" className="hover:text-amber-300 transition-colors">
-                  Gastronomi & Ziyafet Menüleri
+                <Link href="/organizasyon-konseptleri" className="hover:text-amber-300 transition-colors">
+                  Organizasyon Konseptleri (7 Konsept)
                 </Link>
               </li>
               <li>
-                <Link href="/fiyat-hesapla" className="hover:text-amber-300 transition-colors">
-                  Canlı Düğün Bütçesi Hesaplayıcı
+                <Link href="/menuler" className="hover:text-amber-300 transition-colors">
+                  Gastronomi & Ziyafet Menüleri
                 </Link>
               </li>
               <li>

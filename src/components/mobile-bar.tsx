@@ -1,6 +1,6 @@
 "use client";
 
-import { Calendar, Calculator, MessageCircle, Phone } from "lucide-react";
+import { Calendar, MessageCircle, Phone, Sparkles } from "lucide-react";
 import { venueConfig } from "@/lib/venue";
 import { useIsletmeAdi } from "@/lib/use-isletme-adi";
 import Link from "next/link";
@@ -10,7 +10,7 @@ export function MobileActionBar({ onOpenAppointment }: { onOpenAppointment: () =
 
   const handleWhatsapp = () => {
     const text = encodeURIComponent(
-      `Merhaba ${currentName}, salonlarınız hakkında bilgi ve müsaitlik durumunu öğrenmek istiyorum.`
+      `Merhaba ${currentName}, salonlarınız ve organizasyon konseptleriniz hakkında bilgi ve müsaitlik durumunu öğrenmek istiyorum.`
     );
     window.open(`https://wa.me/${venueConfig.whatsappRaw}?text=${text}`, "_blank");
   };
@@ -36,13 +36,13 @@ export function MobileActionBar({ onOpenAppointment }: { onOpenAppointment: () =
           <span>WhatsApp</span>
         </button>
 
-        {/* Fiyat Hesapla */}
+        {/* Konseptler */}
         <Link
-          href="/fiyat-hesapla"
+          href="/organizasyon-konseptleri"
           className="flex flex-col items-center justify-center rounded-xl py-1 text-[10px] font-medium text-neutral-300 hover:text-amber-300"
         >
-          <Calculator className="h-4 w-4 text-amber-400 mb-0.5" />
-          <span>Fiyat Çıkar</span>
+          <Sparkles className="h-4 w-4 text-amber-400 mb-0.5" />
+          <span>Konseptler</span>
         </Link>
 
         {/* Randevu Al */}

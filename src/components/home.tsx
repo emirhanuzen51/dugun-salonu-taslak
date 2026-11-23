@@ -3,8 +3,8 @@
 import Link from "next/link";
 import { ArrowRight, Calendar, Camera, Crown, Music, ShieldCheck, Sparkles, UtensilsCrossed } from "lucide-react";
 import { Hero } from "./hero";
+import { ConceptsSection } from "./concepts-section";
 import { SalonsShowcase } from "./salons-showcase";
-import { BudgetCalculator } from "./budget-calculator";
 import { CalendarAvailability } from "./calendar-availability";
 import { MenuTasting } from "./menu-tasting";
 import { GallerySection } from "./gallery";
@@ -22,11 +22,11 @@ export function HomePage() {
       {/* 1. Grand Hero */}
       <Hero />
 
-      {/* 2. 3 Salon Tanıtım & Karşılaştırma */}
-      <SalonsShowcase />
+      {/* 2. Organizasyon Konseptleri (Düğün, Kına, Nişan, Gala, Sünnet) */}
+      <ConceptsSection />
 
-      {/* 3. Canlı Düğün Bütçesi ve Fiyat Hesaplayıcı */}
-      <BudgetCalculator />
+      {/* 3. 3 Salon Tanıtım & Karşılaştırma */}
+      <SalonsShowcase />
 
       {/* 4. 2026 Sezonu Canlı Tarih & Doluluk Takvimi */}
       <CalendarAvailability onSelectDate={() => openAppointment()} />

@@ -17,10 +17,10 @@ export const venueConfig = {
 
 export const mainNav = [
   { label: "Ana Sayfa", href: "/" },
+  { label: "Organizasyon Konseptleri", href: "/organizasyon-konseptleri", badge: "Yeni" },
   { label: "Salonlarımız", href: "/salonlarimiz" },
   { label: "Hizmetlerimiz", href: "/hizmetler" },
   { label: "Menüler & Gastronomi", href: "/menuler" },
-  { label: "Fiyat Hesapla", href: "/fiyat-hesapla", badge: "Canlı" },
   { label: "Galeri", href: "/galeri" },
   { label: "Hakkımızda", href: "/hakkimizda" },
   { label: "İletişim", href: "/iletisim" },

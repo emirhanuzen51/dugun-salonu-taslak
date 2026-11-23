@@ -23,6 +23,7 @@ import { useIsletmeAdi } from "@/lib/use-isletme-adi";
 import { salons } from "@/lib/salons";
 import { services } from "@/lib/services";
 import { menuPackages } from "@/lib/menus";
+import { eventConcepts } from "@/lib/concepts";
 
 interface CommandPaletteProps {
   isOpen: boolean;
@@ -76,27 +77,39 @@ export function CommandPalette({
         },
       },
       {
-        id: "act-calc",
+        id: "act-concepts",
         type: "Eylem",
-        title: "Canlı Düğün Bütçesi Hesapla",
-        sub: "Kişi sayısı ve menüye göre anında fiyat teklifi çıkarın",
+        title: "Organizasyon Konseptlerini Keşfet",
+        sub: "Saray düğünü, kır bahçesi, kına gecesi, nişan ve kurumsal galalar",
         icon: Sparkles,
         action: () => {
           onClose();
-          router.push("/fiyat-hesapla");
+          router.push("/organizasyon-konseptleri");
         },
       },
       {
         id: "act-call",
         type: "İletişim",
         title: `Hemen Arayın: ${venueConfig.phone}`,
-        sub: "Davet hattı ile doğrudan görüşün",
+        sub: "Davet danışmanı ile doğrudan görüşün",
         icon: Phone,
         action: () => {
           window.location.href = `tel:${venueConfig.phoneRaw}`;
         },
       },
     ];
+
+    const conceptResults = eventConcepts.map((c) => ({
+      id: `concept-${c.id}`,
+      type: "Konsept",
+      title: c.title,
+      sub: `${c.capacity} • ${c.tagline}`,
+      icon: Sparkles,
+      action: () => {
+        onClose();
+        router.push(`/organizasyon-konseptleri/${c.slug}`);
+      },
+    }));
 
     const salonResults = salons.map((s) => ({
       id: `salon-${s.id}`,
@@ -126,7 +139,7 @@ export function CommandPalette({
       id: `menu-${m.id}`,
       type: "Menü",
       title: m.name,
-      sub: `${m.pricePerPerson.toLocaleString("tr-TR")} ₺ / Kişi • ${m.tagline}`,
+      sub: `${m.tagline}`,
       icon: UtensilsCrossed,
       action: () => {
         onClose();
@@ -146,7 +159,7 @@ export function CommandPalette({
       },
     }));
 
-    const all = [...quickActions, ...salonResults, ...serviceResults, ...menuResults, ...navResults];
+    const all = [...quickActions, ...conceptResults, ...salonResults, ...serviceResults, ...menuResults, ...navResults];
 
     if (!q) return all.slice(0, 10);
 
@@ -183,7 +196,6 @@ export function CommandPalette({
     <AnimatePresence>
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-start justify-center pt-20 sm:pt-28 px-4">
-          {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -192,7 +204,6 @@ export function CommandPalette({
             className="fixed inset-0 bg-black/80 backdrop-blur-md"
           />
 
-          {/* Modal Container */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95, y: -10 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -200,13 +211,12 @@ export function CommandPalette({
             transition={{ duration: 0.2 }}
             className="relative w-full max-w-2xl overflow-hidden rounded-2xl border border-amber-500/30 bg-neutral-950 text-white shadow-[0_10px_50px_rgba(0,0,0,0.9)] z-10"
           >
-            {/* Search Input Bar */}
             <div className="flex items-center gap-3 border-b border-white/10 px-5 py-4">
               <Search className="h-5 w-5 text-amber-400 shrink-0" />
               <input
                 type="text"
                 autoFocus
-                placeholder="Salon, menü, hizmet veya bütçe hesaplama arayın..."
+                placeholder="Konsept, salon, menü veya hizmet arayın..."
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 onKeyDown={handleKeyDown}
@@ -220,7 +230,6 @@ export function CommandPalette({
               </button>
             </div>
 
-            {/* Results List */}
             <div className="max-h-[60vh] overflow-y-auto p-3 space-y-1">
               {filteredResults.length === 0 ? (
                 <div className="py-12 text-center text-neutral-400">
@@ -272,7 +281,6 @@ export function CommandPalette({
               )}
             </div>
 
-            {/* Footer Shortcut Helper */}
             <div className="flex items-center justify-between border-t border-white/10 bg-neutral-900/50 px-5 py-3 text-[11px] text-neutral-400">
               <div className="flex items-center gap-3">
                 <span>↑↓ ile Gezin</span>

@@ -29,25 +29,25 @@ export function StoryReviews() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   return (
-    <section className="py-24 sm:py-32 bg-neutral-950 border-t border-white/10 relative">
+    <section className="py-24 sm:py-32 bg-[#f6f3ed] border-t border-amber-900/10 relative">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Testimonials */}
         <div>
           <div className="text-center max-w-3xl mx-auto">
-            <div className="inline-flex items-center gap-2 rounded-full border border-amber-400/30 bg-neutral-900/80 px-4 py-1.5 text-xs font-semibold text-amber-300 uppercase tracking-widest">
-              <Heart className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
+            <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/30 bg-white px-4 py-1.5 text-xs font-bold text-amber-800 uppercase tracking-widest shadow-2xs">
+              <Heart className="h-3.5 w-3.5 fill-amber-600 text-amber-600" />
               <span>Gerçek Aşk Hikayeleri</span>
             </div>
-            <h2 className="mt-4 font-serif text-3xl sm:text-5xl font-normal text-white tracking-tight">
-              Mutlu Çiftlerimizin <span className="italic bg-gradient-to-r from-amber-200 to-amber-400 bg-clip-text text-transparent">Deneyimleri</span>
+            <h2 className="mt-4 font-serif text-3xl sm:text-5xl font-normal text-neutral-900 tracking-tight">
+              Mutlu Çiftlerimizin <span className="italic bg-gradient-to-r from-amber-700 via-amber-600 to-amber-800 bg-clip-text text-transparent">Deneyimleri</span>
             </h2>
-            <div className="mt-3 flex items-center justify-center gap-2 text-xs text-neutral-400">
-              <div className="flex text-amber-400">
+            <div className="mt-3 flex items-center justify-center gap-2 text-xs text-neutral-600">
+              <div className="flex text-amber-500">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="h-4 w-4 fill-current" />
                 ))}
               </div>
-              <span className="font-bold text-white">4.9 / 5.0</span>
+              <span className="font-bold text-neutral-900">4.9 / 5.0</span>
               <span>(1.250+ Mutlu Çift)</span>
             </div>
           </div>
@@ -56,17 +56,17 @@ export function StoryReviews() {
             {testimonials.map((t, idx) => (
               <div
                 key={idx}
-                className="flex flex-col justify-between rounded-3xl border border-white/10 bg-neutral-900/60 p-7 sm:p-8 shadow-xl backdrop-blur-xl relative"
+                className="flex flex-col justify-between rounded-3xl border border-amber-900/10 bg-white p-7 sm:p-8 shadow-[0_8px_30px_rgba(180,140,50,0.06)] relative"
               >
-                <Quote className="h-8 w-8 text-amber-400/30 mb-4" />
-                <p className="text-sm text-neutral-300 leading-relaxed italic">
+                <Quote className="h-8 w-8 text-amber-600/30 mb-4" />
+                <p className="text-sm text-neutral-700 leading-relaxed italic">
                   &ldquo;{t.comment}&rdquo;
                 </p>
-                <div className="mt-6 pt-5 border-t border-white/10">
-                  <h4 className="font-serif text-base font-bold text-white">{t.names}</h4>
-                  <div className="flex items-center justify-between text-[11px] text-neutral-400 mt-1">
+                <div className="mt-6 pt-5 border-t border-amber-900/10">
+                  <h4 className="font-serif text-base font-bold text-neutral-900">{t.names}</h4>
+                  <div className="flex items-center justify-between text-[11px] text-neutral-500 mt-1">
                     <span>{t.salon}</span>
-                    <span className="text-amber-400 font-semibold">{t.date}</span>
+                    <span className="text-amber-800 font-semibold">{t.date}</span>
                   </div>
                 </div>
               </div>
@@ -77,11 +77,11 @@ export function StoryReviews() {
         {/* FAQs */}
         <div className="mt-28 max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 rounded-full border border-amber-400/30 bg-neutral-900/80 px-4 py-1.5 text-xs font-semibold text-amber-300 uppercase tracking-widest">
-              <HelpCircle className="h-3.5 w-3.5" />
+            <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/30 bg-white px-4 py-1.5 text-xs font-bold text-amber-800 uppercase tracking-widest shadow-2xs">
+              <HelpCircle className="h-3.5 w-3.5 text-amber-600" />
               <span>Merak Edilenler</span>
             </div>
-            <h3 className="mt-4 font-serif text-2xl sm:text-4xl font-normal text-white">
+            <h3 className="mt-4 font-serif text-2xl sm:text-4xl font-normal text-neutral-900">
               Sıkça Sorulan Sorular
             </h3>
           </div>
@@ -92,23 +92,23 @@ export function StoryReviews() {
               return (
                 <div
                   key={idx}
-                  className="rounded-2xl border border-white/10 bg-neutral-900/60 overflow-hidden backdrop-blur-xl transition-all"
+                  className="rounded-2xl border border-amber-900/10 bg-white overflow-hidden shadow-2xs transition-all"
                 >
                   <button
                     onClick={() => setOpenFaq(isOpen ? null : idx)}
                     className="flex w-full items-center justify-between p-5 sm:p-6 text-left transition-colors cursor-pointer"
                   >
-                    <span className="font-serif text-base sm:text-lg font-medium text-white pr-4">
+                    <span className="font-serif text-base sm:text-lg font-bold text-neutral-900 pr-4">
                       {faq.q}
                     </span>
                     <ChevronDown
-                      className={`h-5 w-5 text-amber-400 shrink-0 transition-transform duration-200 ${
+                      className={`h-5 w-5 text-amber-600 shrink-0 transition-transform duration-200 ${
                         isOpen ? "rotate-180" : ""
                       }`}
                     />
                   </button>
                   {isOpen && (
-                    <div className="px-5 sm:px-6 pb-6 pt-1 text-sm text-neutral-400 leading-relaxed border-t border-white/5">
+                    <div className="px-5 sm:px-6 pb-6 pt-1 text-sm text-neutral-600 leading-relaxed border-t border-amber-900/5">
                       {faq.a}
                     </div>
                   )}

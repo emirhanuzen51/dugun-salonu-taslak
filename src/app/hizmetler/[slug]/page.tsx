@@ -34,7 +34,7 @@ export default async function ServiceDetailPage({ params }: Props) {
   }
 
   return (
-    <main>
+    <main className="bg-[#fcfbfa]">
       <PageHero
         badge={svc.category}
         title={svc.title}
@@ -42,58 +42,58 @@ export default async function ServiceDetailPage({ params }: Props) {
         image={svc.image}
       />
 
-      <section className="py-24 sm:py-32 bg-neutral-950">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
+      <section className="py-24 sm:py-32 bg-[#fcfbfa]">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-10">
             <Link
               href="/hizmetler"
-              className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-neutral-400 hover:text-amber-300 transition-colors"
+              className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-neutral-600 hover:text-amber-800 transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
               <span>Tüm Hizmetlere Dön</span>
             </Link>
           </div>
 
-          <div className="grid gap-14 lg:grid-cols-12">
+          <div className="grid gap-12 lg:grid-cols-12">
             <div className="lg:col-span-8 space-y-12">
               <div>
                 <SectionBadge number="01">Hizmet Kapsamı</SectionBadge>
-                <h2 className="mt-4 font-serif text-3xl font-normal text-white sm:text-4xl">
+                <h2 className="mt-4 font-serif text-3xl font-bold text-neutral-900 sm:text-4xl">
                   Profesyonel Standartlar ve Uygulama
                 </h2>
-                <p className="mt-6 text-base leading-relaxed text-neutral-300">
+                <p className="mt-5 text-base leading-relaxed text-neutral-700">
                   {svc.description}
                 </p>
               </div>
 
               {/* Highlights */}
-              <div className="rounded-3xl border border-white/10 bg-neutral-900/60 p-8 backdrop-blur-xl">
+              <div className="rounded-3xl border border-amber-900/10 bg-white p-6 sm:p-8 shadow-[0_10px_35px_rgba(180,140,50,0.06)]">
                 <SectionBadge number="02">Paket Ayrıcalıkları</SectionBadge>
-                <h3 className="mt-4 font-serif text-2xl font-normal text-white">
+                <h3 className="mt-4 font-serif text-2xl font-bold text-neutral-900">
                   Öne Çıkan Standartlar
                 </h3>
                 <div className="mt-6 space-y-3">
                   {svc.highlights.map((h, i) => (
-                    <div key={i} className="flex items-start gap-3 rounded-xl border border-white/5 bg-neutral-900/80 p-4">
-                      <CheckCircle2 className="h-5 w-5 text-amber-400 shrink-0 mt-0.5" />
-                      <span className="text-sm text-neutral-200">{h}</span>
+                    <div key={i} className="flex items-start gap-3 rounded-2xl border border-amber-900/10 bg-amber-50/40 p-4">
+                      <CheckCircle2 className="h-5 w-5 text-amber-600 shrink-0 mt-0.5" />
+                      <span className="text-sm text-neutral-800">{h}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* 3-Step Process */}
-              <div className="rounded-3xl border border-white/10 bg-neutral-900/60 p-8 backdrop-blur-xl">
+              <div className="rounded-3xl border border-amber-900/10 bg-white p-6 sm:p-8 shadow-[0_10px_35px_rgba(180,140,50,0.06)]">
                 <SectionBadge number="03">Süreç Nasıl İlerliyor?</SectionBadge>
-                <h3 className="mt-4 font-serif text-2xl font-normal text-white">
+                <h3 className="mt-4 font-serif text-2xl font-bold text-neutral-900">
                   Adım Adım Kusursuz Yönetim
                 </h3>
                 <div className="mt-6 grid sm:grid-cols-3 gap-4">
                   {svc.process.map((p, i) => (
-                    <div key={i} className="rounded-2xl border border-white/5 bg-neutral-900/90 p-5">
-                      <span className="font-serif text-3xl font-bold text-amber-400 block mb-2">{p.step}</span>
-                      <h4 className="text-sm font-semibold text-white mb-1">{p.title}</h4>
-                      <p className="text-xs text-neutral-400 leading-relaxed">{p.desc}</p>
+                    <div key={i} className="rounded-2xl border border-amber-900/10 bg-amber-50/50 p-5">
+                      <span className="font-serif text-3xl font-bold text-amber-700 block mb-2">{p.step}</span>
+                      <h4 className="text-sm font-bold text-neutral-900 mb-1">{p.title}</h4>
+                      <p className="text-xs text-neutral-600 leading-relaxed">{p.desc}</p>
                     </div>
                   ))}
                 </div>
@@ -102,20 +102,20 @@ export default async function ServiceDetailPage({ params }: Props) {
 
             {/* Sidebar */}
             <div className="lg:col-span-4">
-              <div className="sticky top-28 space-y-6 rounded-3xl border border-amber-500/30 bg-neutral-900/80 p-6 sm:p-8 backdrop-blur-xl shadow-2xl">
+              <div className="sticky top-28 space-y-6 rounded-3xl border border-amber-500/25 bg-white p-6 sm:p-8 shadow-[0_15px_45px_rgba(180,140,50,0.1)]">
                 <div>
-                  <span className="text-xs font-bold uppercase tracking-widest text-amber-400">
+                  <span className="text-xs font-bold uppercase tracking-widest text-amber-700">
                     Özel Danışmanlık
                   </span>
-                  <h3 className="font-serif text-2xl font-normal text-white mt-1">
+                  <h3 className="font-serif text-2xl font-bold text-neutral-900 mt-1">
                     {svc.title}
                   </h3>
-                  <p className="text-xs text-neutral-400 mt-1">
+                  <p className="text-xs text-neutral-500 mt-1">
                     Düğün paketlerinize entegre edilebilir opsiyonlar.
                   </p>
                 </div>
 
-                <div className="border-t border-b border-white/10 py-4 space-y-2 text-xs text-neutral-300">
+                <div className="border-t border-b border-amber-900/10 py-4 space-y-2 text-xs text-neutral-700">
                   <p>Bu hizmet ve detayları hakkında organizasyon direktörümüzle doğrudan görüşebilirsiniz.</p>
                 </div>
 
@@ -126,7 +126,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full rounded-xl bg-gradient-to-r from-amber-400 to-amber-300 py-3.5 text-center text-xs font-bold text-neutral-950 shadow-md hover:brightness-110 active:scale-98 transition-all flex items-center justify-center gap-2 block"
+                    className="w-full rounded-xl bg-gradient-to-r from-amber-400 to-amber-300 py-3.5 text-center text-xs font-bold text-neutral-950 shadow-xs hover:brightness-105 active:scale-98 transition-all flex items-center justify-center gap-2 block"
                   >
                     <MessageCircle className="h-4 w-4" />
                     <span>WhatsApp ile Bilgi Al</span>
@@ -134,15 +134,15 @@ export default async function ServiceDetailPage({ params }: Props) {
 
                   <Link
                     href="/organizasyon-konseptleri"
-                    className="w-full rounded-xl border border-white/10 bg-neutral-800 py-3 text-center text-xs font-semibold text-neutral-200 hover:text-white hover:border-amber-400 transition-colors flex items-center justify-center gap-2 block"
+                    className="w-full rounded-xl border border-amber-900/15 bg-white py-3 text-center text-xs font-bold text-neutral-800 hover:border-amber-500 hover:bg-amber-50/50 transition-colors flex items-center justify-center gap-2 block shadow-2xs"
                   >
-                    <Sparkles className="h-4 w-4 text-amber-400" />
+                    <Sparkles className="h-4 w-4 text-amber-600" />
                     <span>Organizasyon Konseptlerini Keşfet</span>
                   </Link>
 
                   <a
                     href={`tel:${venueConfig.phoneRaw}`}
-                    className="w-full rounded-xl border border-white/5 bg-neutral-900 py-3 text-center text-xs font-medium text-neutral-400 hover:text-white transition-colors flex items-center justify-center gap-2 block"
+                    className="w-full rounded-xl border border-amber-900/10 bg-neutral-50 py-3 text-center text-xs font-semibold text-neutral-700 hover:text-neutral-900 transition-colors flex items-center justify-center gap-2 block"
                   >
                     <Phone className="h-4 w-4" />
                     <span>{venueConfig.phone}</span>

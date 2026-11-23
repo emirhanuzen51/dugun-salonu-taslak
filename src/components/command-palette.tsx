@@ -201,7 +201,7 @@ export function CommandPalette({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-black/80 backdrop-blur-md"
+            className="fixed inset-0 bg-black/45 backdrop-blur-xs"
           />
 
           <motion.div
@@ -209,10 +209,10 @@ export function CommandPalette({
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="relative w-full max-w-2xl overflow-hidden rounded-2xl border border-amber-500/30 bg-neutral-950 text-white shadow-[0_10px_50px_rgba(0,0,0,0.9)] z-10"
+            className="relative w-full max-w-2xl overflow-hidden rounded-3xl border border-amber-500/25 bg-white text-neutral-900 shadow-[0_20px_60px_rgba(180,140,50,0.18)] z-10"
           >
-            <div className="flex items-center gap-3 border-b border-white/10 px-5 py-4">
-              <Search className="h-5 w-5 text-amber-400 shrink-0" />
+            <div className="flex items-center gap-3 border-b border-neutral-100 px-5 py-4">
+              <Search className="h-5 w-5 text-amber-600 shrink-0" />
               <input
                 type="text"
                 autoFocus
@@ -220,11 +220,11 @@ export function CommandPalette({
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 onKeyDown={handleKeyDown}
-                className="w-full bg-transparent text-sm sm:text-base text-white placeholder-neutral-500 outline-none"
+                className="w-full bg-transparent text-sm sm:text-base text-neutral-900 placeholder-neutral-400 outline-none"
               />
               <button
                 onClick={onClose}
-                className="rounded-lg p-1.5 text-neutral-400 hover:bg-neutral-800 hover:text-white transition-colors"
+                className="rounded-lg p-1.5 text-neutral-400 hover:bg-neutral-100 hover:text-neutral-700 transition-colors"
               >
                 <X className="h-5 w-5" />
               </button>
@@ -244,35 +244,35 @@ export function CommandPalette({
                       key={item.id}
                       onClick={() => handleSelect(item)}
                       onMouseEnter={() => setSelectedIndex(index)}
-                      className={`flex w-full items-center gap-3.5 rounded-xl px-4 py-3 text-left transition-all ${
+                      className={`flex w-full items-center gap-3.5 rounded-2xl px-4 py-3 text-left transition-all cursor-pointer ${
                         isSelected
-                          ? "bg-gradient-to-r from-amber-500/20 to-transparent border border-amber-500/40 text-white"
-                          : "border border-transparent text-neutral-300 hover:bg-neutral-900"
+                          ? "bg-amber-50/80 border border-amber-500/30 text-neutral-900 shadow-2xs"
+                          : "border border-transparent text-neutral-700 hover:bg-neutral-50"
                       }`}
                     >
                       <div
-                        className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border ${
+                        className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border ${
                           isSelected
-                            ? "border-amber-400 bg-amber-400 text-black shadow-md"
-                            : "border-white/10 bg-neutral-900 text-amber-400"
+                            ? "border-amber-400 bg-amber-400 text-neutral-950 shadow-xs"
+                            : "border-amber-900/10 bg-amber-50 text-amber-700"
                         }`}
                       >
                         <Icon className="h-4 w-4" />
                       </div>
                       <div className="min-w-0 flex-1">
                         <div className="flex items-center gap-2">
-                          <span className="truncate text-sm font-medium text-white">
+                          <span className="truncate text-sm font-bold text-neutral-900">
                             {item.title}
                           </span>
-                          <span className="rounded-md border border-white/10 bg-neutral-900 px-2 py-0.5 text-[10px] font-semibold text-amber-300 uppercase">
+                          <span className="rounded-md border border-amber-900/10 bg-amber-50 px-2 py-0.5 text-[10px] font-bold text-amber-800 uppercase">
                             {item.type}
                           </span>
                         </div>
-                        <p className="truncate text-xs text-neutral-400 mt-0.5">{item.sub}</p>
+                        <p className="truncate text-xs text-neutral-500 mt-0.5">{item.sub}</p>
                       </div>
                       <ArrowRight
                         className={`h-4 w-4 shrink-0 transition-transform ${
-                          isSelected ? "translate-x-1 text-amber-400" : "text-neutral-600"
+                          isSelected ? "translate-x-1 text-amber-600" : "text-neutral-400"
                         }`}
                       />
                     </button>
@@ -281,7 +281,7 @@ export function CommandPalette({
               )}
             </div>
 
-            <div className="flex items-center justify-between border-t border-white/10 bg-neutral-900/50 px-5 py-3 text-[11px] text-neutral-400">
+            <div className="flex items-center justify-between border-t border-neutral-100 bg-neutral-50/60 px-5 py-3 text-[11px] text-neutral-500">
               <div className="flex items-center gap-3">
                 <span>↑↓ ile Gezin</span>
                 <span>•</span>
@@ -289,7 +289,7 @@ export function CommandPalette({
                 <span>•</span>
                 <span>ESC ile Kapat</span>
               </div>
-              <span className="text-amber-400 font-medium">{currentName}</span>
+              <span className="text-amber-700 font-bold">{currentName}</span>
             </div>
           </motion.div>
         </div>

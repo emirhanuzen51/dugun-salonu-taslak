@@ -21,6 +21,7 @@ import { useIsletmeAdi } from "@/lib/use-isletme-adi";
 import { Monogram } from "./icons";
 import { useModals } from "./modal-context";
 import { salons } from "@/lib/salons";
+import { eventConcepts } from "@/lib/concepts";
 
 export function Brand({ light = false }: { light?: boolean }) {
   const currentName = useIsletmeAdi();
@@ -29,10 +30,10 @@ export function Brand({ light = false }: { light?: boolean }) {
     <Link href="/" className="flex items-center gap-3 group">
       <Monogram className="h-10 w-10 shrink-0 transition-transform duration-300 group-hover:scale-105" light={light} />
       <div className="leading-tight">
-        <span className="block font-serif text-base sm:text-lg font-medium tracking-wide text-white group-hover:text-amber-300 transition-colors">
+        <span className="block font-serif text-base sm:text-lg font-bold tracking-wide text-neutral-900 group-hover:text-amber-700 transition-colors">
           {currentName}
         </span>
-        <span className="block text-[9px] sm:text-[10px] uppercase font-semibold tracking-[0.2em] text-amber-400/90">
+        <span className="block text-[9px] sm:text-[10px] uppercase font-bold tracking-[0.2em] text-amber-600">
           Lüks Düğün, Balo & Davet
         </span>
       </div>
@@ -59,11 +60,11 @@ export function Header() {
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           scrolled
-            ? "border-b border-amber-500/20 bg-neutral-950/90 backdrop-blur-xl shadow-[0_10px_30px_rgba(0,0,0,0.8)] py-3"
-            : "border-b border-white/10 bg-neutral-950/60 backdrop-blur-md py-4"
+            ? "border-b border-amber-900/10 bg-white/90 backdrop-blur-xl shadow-[0_4px_25px_rgba(180,140,50,0.08)] py-3"
+            : "border-b border-amber-900/5 bg-white/70 backdrop-blur-md py-4"
         }`}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 sm:px-8">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <Brand />
 
           {/* Desktop Navigation */}
@@ -74,22 +75,22 @@ export function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`relative px-3 py-1.5 text-xs xl:text-sm font-medium tracking-wide transition-colors ${
+                  className={`relative px-3 py-1.5 text-xs xl:text-sm font-semibold tracking-wide transition-colors ${
                     isActive
-                      ? "text-amber-300 font-semibold"
-                      : "text-neutral-300 hover:text-white"
+                      ? "text-amber-700 font-bold"
+                      : "text-neutral-700 hover:text-amber-800"
                   }`}
                 >
                   {item.label}
                   {item.badge && (
-                    <span className="ml-1.5 rounded-full bg-amber-400/20 border border-amber-400/40 px-1.5 py-0.2 text-[10px] font-bold text-amber-300">
+                    <span className="ml-1.5 rounded-full bg-amber-500/15 border border-amber-500/30 px-1.5 py-0.2 text-[10px] font-bold text-amber-800">
                       {item.badge}
                     </span>
                   )}
                   {isActive && (
                     <motion.div
                       layoutId="activeNav"
-                      className="absolute bottom-0 left-2 right-2 h-0.5 bg-gradient-to-r from-amber-400 to-amber-200"
+                      className="absolute bottom-0 left-2 right-2 h-0.5 bg-gradient-to-r from-amber-500 to-amber-400"
                     />
                   )}
                 </Link>
@@ -103,11 +104,11 @@ export function Header() {
             <button
               onClick={openCommandPalette}
               aria-label="Arama"
-              className="flex items-center gap-2 rounded-xl border border-white/10 bg-neutral-900/80 px-3 py-2 text-xs text-neutral-400 hover:border-amber-400/40 hover:text-white transition-all shadow-inner"
+              className="flex items-center gap-2 rounded-xl border border-amber-900/10 bg-amber-50/60 px-3 py-2 text-xs text-neutral-600 hover:border-amber-500/40 hover:text-neutral-900 transition-all shadow-xs cursor-pointer"
             >
-              <Search className="h-3.5 w-3.5 text-amber-400" />
-              <span className="hidden sm:inline">Ara</span>
-              <kbd className="hidden sm:inline rounded bg-neutral-800 px-1.5 py-0.5 text-[10px] font-mono text-neutral-400">
+              <Search className="h-3.5 w-3.5 text-amber-600" />
+              <span className="hidden sm:inline font-medium">Ara</span>
+              <kbd className="hidden sm:inline rounded bg-white px-1.5 py-0.5 text-[10px] font-mono text-neutral-500 border border-neutral-200">
                 Ctrl K
               </kbd>
             </button>
@@ -115,7 +116,7 @@ export function Header() {
             {/* Book Tour CTA */}
             <button
               onClick={() => openAppointment()}
-              className="hidden sm:inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500 px-4 py-2 text-xs font-bold text-neutral-950 shadow-[0_0_20px_rgba(217,179,94,0.3)] hover:brightness-110 active:scale-95 transition-all"
+              className="hidden sm:inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500 px-4 py-2 text-xs font-bold text-neutral-950 shadow-[0_2px_15px_rgba(217,179,94,0.35)] hover:brightness-105 active:scale-95 transition-all cursor-pointer"
             >
               <Calendar className="h-3.5 w-3.5" />
               <span>Salon Turu Ayarla</span>
@@ -125,7 +126,7 @@ export function Header() {
             <button
               onClick={() => setMobileMenuOpen(true)}
               aria-label="Menüyü Aç"
-              className="lg:hidden rounded-xl border border-white/10 bg-neutral-900 p-2 text-white hover:bg-neutral-800"
+              className="lg:hidden rounded-xl border border-amber-900/15 bg-white p-2 text-neutral-900 hover:bg-neutral-50 shadow-xs cursor-pointer"
             >
               <Menu className="h-5 w-5" />
             </button>
@@ -142,21 +143,21 @@ export function Header() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setMobileMenuOpen(false)}
-              className="fixed inset-0 bg-black/85 backdrop-blur-md"
+              className="fixed inset-0 bg-black/50 backdrop-blur-xs"
             />
             <motion.div
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed top-0 right-0 bottom-0 w-full max-w-xs border-l border-amber-500/30 bg-neutral-950 p-6 shadow-2xl flex flex-col justify-between"
+              className="fixed top-0 right-0 bottom-0 w-full max-w-xs border-l border-amber-900/15 bg-white p-6 shadow-2xl flex flex-col justify-between"
             >
               <div>
-                <div className="flex items-center justify-between pb-6 border-b border-white/10">
+                <div className="flex items-center justify-between pb-6 border-b border-amber-900/10">
                   <Brand />
                   <button
                     onClick={() => setMobileMenuOpen(false)}
-                    className="rounded-lg p-1.5 text-neutral-400 hover:text-white"
+                    className="rounded-lg p-1.5 text-neutral-500 hover:text-neutral-900"
                   >
                     <X className="h-5 w-5" />
                   </button>
@@ -168,26 +169,26 @@ export function Header() {
                       key={item.href}
                       href={item.href}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="flex items-center justify-between rounded-xl px-4 py-3 text-sm font-medium text-neutral-200 hover:bg-neutral-900 hover:text-amber-300 transition-colors"
+                      className="flex items-center justify-between rounded-xl px-4 py-3 text-sm font-semibold text-neutral-800 hover:bg-amber-50 hover:text-amber-800 transition-colors"
                     >
                       <span>{item.label}</span>
-                      <ChevronRight className="h-4 w-4 text-neutral-600" />
+                      <ChevronRight className="h-4 w-4 text-neutral-400" />
                     </Link>
                   ))}
                 </div>
               </div>
 
-              <div className="border-t border-white/10 pt-6 space-y-3">
+              <div className="border-t border-amber-900/10 pt-6 space-y-3">
                 <button
                   onClick={() => {
                     setMobileMenuOpen(false);
                     openAppointment();
                   }}
-                  className="w-full rounded-xl bg-gradient-to-r from-amber-400 to-amber-300 py-3 text-center text-xs font-bold text-neutral-950 shadow-lg"
+                  className="w-full rounded-xl bg-gradient-to-r from-amber-400 to-amber-300 py-3 text-center text-xs font-bold text-neutral-950 shadow-md"
                 >
                   Salon Turu Randevusu Al
                 </button>
-                <div className="text-center text-xs text-neutral-400">
+                <div className="text-center text-xs text-neutral-500">
                   <p>{venueConfig.phone}</p>
                 </div>
               </div>
@@ -203,21 +204,21 @@ export function Footer() {
   const currentName = useIsletmeAdi();
 
   return (
-    <footer className="border-t border-amber-500/20 bg-neutral-950 text-white pt-20 pb-28 sm:pb-16 relative overflow-hidden">
-      {/* Decorative Gold Glow */}
-      <div className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-amber-500/5 blur-[120px] rounded-full" />
+    <footer className="border-t border-amber-900/15 bg-[#f6f3ed] text-neutral-900 pt-20 pb-28 sm:pb-16 relative overflow-hidden">
+      {/* Decorative Gold Radial Glow */}
+      <div className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-amber-400/10 blur-[130px] rounded-full" />
 
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <div className="grid gap-12 lg:grid-cols-12 pb-16 border-b border-white/10">
+        <div className="grid gap-12 lg:grid-cols-12 pb-16 border-b border-amber-900/10">
           {/* Brand Info */}
           <div className="lg:col-span-4 space-y-5">
             <Brand />
-            <p className="text-sm leading-relaxed text-neutral-400">
+            <p className="text-sm leading-relaxed text-neutral-600">
               {venueConfig.tagline}. {venueConfig.subTagline}
             </p>
             <div className="flex items-center gap-3 pt-2">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-400/30 bg-amber-400/10 px-3 py-1 text-xs text-amber-300">
-                <Sparkles className="h-3 w-3" />
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-500/30 bg-amber-500/10 px-3 py-1 text-xs font-semibold text-amber-800">
+                <Sparkles className="h-3 w-3 text-amber-600" />
                 2026 Erken Rezervasyon Aktif
               </span>
             </div>
@@ -225,53 +226,53 @@ export function Footer() {
 
           {/* Quick Links */}
           <div className="lg:col-span-2">
-            <h4 className="text-xs font-bold uppercase tracking-widest text-amber-400 mb-4">
+            <h4 className="text-xs font-bold uppercase tracking-widest text-amber-800 mb-4">
               Salonlarımız
             </h4>
-            <ul className="space-y-2.5 text-sm text-neutral-400">
+            <ul className="space-y-2.5 text-sm text-neutral-600">
               {salons.map((s) => (
                 <li key={s.id}>
-                  <Link href={`/salonlarimiz/${s.slug}`} className="hover:text-amber-300 transition-colors">
+                  <Link href={`/salonlarimiz/${s.slug}`} className="hover:text-amber-800 transition-colors">
                     {s.name}
                   </Link>
                 </li>
               ))}
               <li>
-                <Link href="/salonlarimiz" className="text-amber-400 hover:underline">
+                <Link href="/salonlarimiz" className="text-amber-700 font-semibold hover:underline">
                   Tümünü Karşılaştır →
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Hizmetler & Menüler */}
+          {/* Konseptler & Menüler */}
           <div className="lg:col-span-3">
-            <h4 className="text-xs font-bold uppercase tracking-widest text-amber-400 mb-4">
+            <h4 className="text-xs font-bold uppercase tracking-widest text-amber-800 mb-4">
               Konseptler & Ayrıcalıklar
             </h4>
-            <ul className="space-y-2.5 text-sm text-neutral-400">
+            <ul className="space-y-2.5 text-sm text-neutral-600">
               <li>
-                <Link href="/organizasyon-konseptleri" className="hover:text-amber-300 transition-colors">
+                <Link href="/organizasyon-konseptleri" className="hover:text-amber-800 transition-colors">
                   Organizasyon Konseptleri (7 Konsept)
                 </Link>
               </li>
               <li>
-                <Link href="/menuler" className="hover:text-amber-300 transition-colors">
+                <Link href="/menuler" className="hover:text-amber-800 transition-colors">
                   Gastronomi & Ziyafet Menüleri
                 </Link>
               </li>
               <li>
-                <Link href="/hizmetler" className="hover:text-amber-300 transition-colors">
+                <Link href="/hizmetler" className="hover:text-amber-800 transition-colors">
                   Orkestra, 4K Drone & Çiçek Tasarımı
                 </Link>
               </li>
               <li>
-                <Link href="/galeri" className="hover:text-amber-300 transition-colors">
+                <Link href="/galeri" className="hover:text-amber-800 transition-colors">
                   Düğün Fotoğraf & Video Galerisi
                 </Link>
               </li>
               <li>
-                <Link href="/hakkimizda" className="hover:text-amber-300 transition-colors">
+                <Link href="/hakkimizda" className="hover:text-amber-800 transition-colors">
                   Hakkımızda & Ekibimiz
                 </Link>
               </li>
@@ -280,25 +281,25 @@ export function Footer() {
 
           {/* İletişim & Lokasyon */}
           <div className="lg:col-span-3 space-y-3.5">
-            <h4 className="text-xs font-bold uppercase tracking-widest text-amber-400 mb-4">
+            <h4 className="text-xs font-bold uppercase tracking-widest text-amber-800 mb-4">
               Ziyaret & İletişim
             </h4>
-            <div className="flex items-start gap-2.5 text-xs text-neutral-300">
-              <MapPin className="h-4 w-4 text-amber-400 shrink-0 mt-0.5" />
+            <div className="flex items-start gap-2.5 text-xs text-neutral-700">
+              <MapPin className="h-4 w-4 text-amber-600 shrink-0 mt-0.5" />
               <span>{venueConfig.address}</span>
             </div>
-            <div className="flex items-center gap-2.5 text-xs text-neutral-300">
-              <Phone className="h-4 w-4 text-amber-400 shrink-0" />
-              <a href={`tel:${venueConfig.phoneRaw}`} className="hover:text-amber-300 transition-colors">
+            <div className="flex items-center gap-2.5 text-xs text-neutral-700">
+              <Phone className="h-4 w-4 text-amber-600 shrink-0" />
+              <a href={`tel:${venueConfig.phoneRaw}`} className="hover:text-amber-800 font-semibold transition-colors">
                 {venueConfig.phone}
               </a>
             </div>
-            <div className="flex items-center gap-2.5 text-xs text-neutral-300">
-              <Clock className="h-4 w-4 text-amber-400 shrink-0" />
+            <div className="flex items-center gap-2.5 text-xs text-neutral-700">
+              <Clock className="h-4 w-4 text-amber-600 shrink-0" />
               <span>{venueConfig.workingHours}</span>
             </div>
-            <div className="pt-2 text-xs text-neutral-400">
-              <p className="border-l-2 border-amber-400/50 pl-3 italic">
+            <div className="pt-2 text-xs text-neutral-600">
+              <p className="border-l-2 border-amber-500/50 pl-3 italic">
                 {venueConfig.parkingCapacity}
               </p>
             </div>
@@ -309,13 +310,13 @@ export function Footer() {
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-500">
           <p>© {new Date().getFullYear()} {currentName}. Tüm hakları saklıdır.</p>
           <div className="flex items-center gap-6">
-            <Link href="/kvkk" className="hover:text-neutral-300 transition-colors">
+            <Link href="/kvkk" className="hover:text-neutral-800 transition-colors">
               KVKK & Aydınlatma
             </Link>
-            <Link href="/cerez-politikasi" className="hover:text-neutral-300 transition-colors">
+            <Link href="/cerez-politikasi" className="hover:text-neutral-800 transition-colors">
               Çerez Politikası
             </Link>
-            <Link href="/iletisim" className="hover:text-neutral-300 transition-colors">
+            <Link href="/iletisim" className="hover:text-neutral-800 transition-colors">
               Ulaşım Krokisi
             </Link>
           </div>

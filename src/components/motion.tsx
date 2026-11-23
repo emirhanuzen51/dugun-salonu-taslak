@@ -82,9 +82,9 @@ export function SectionBadge({
   number?: string;
 }) {
   return (
-    <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/30 bg-amber-500/10 px-4 py-1.5 text-xs font-semibold tracking-wider text-amber-300 uppercase">
+    <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/25 bg-amber-500/10 px-4 py-1.5 text-xs font-bold tracking-wider text-amber-800 uppercase shadow-2xs">
       {number && (
-        <span className="flex h-4 w-4 items-center justify-center rounded-full bg-amber-400 text-[10px] font-bold text-black">
+        <span className="flex h-4 w-4 items-center justify-center rounded-full bg-amber-400 text-[10px] font-bold text-neutral-950">
           {number}
         </span>
       )}
@@ -105,8 +105,8 @@ export function PageHero({
   image?: string;
 }) {
   return (
-    <section className="relative overflow-hidden pt-36 pb-20 sm:pt-44 sm:pb-28 border-b border-white/10 bg-neutral-950">
-      {/* Background with Dark/Gold Overlay */}
+    <section className="relative overflow-hidden pt-36 pb-20 sm:pt-44 sm:pb-28 border-b border-amber-900/10 bg-[#f6f3ed]">
+      {/* Background with Bright Champagne/Ivory Overlay */}
       {image && (
         <div className="absolute inset-0 z-0">
           <Image
@@ -114,31 +114,32 @@ export function PageHero({
             alt={title}
             fill
             priority
-            className="object-cover opacity-20 filter blur-[1px] scale-105"
+            sizes="100vw"
+            className="object-cover opacity-25 filter blur-[1px] scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-neutral-950/80 via-neutral-950/95 to-neutral-950" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#f6f3ed]/85 via-[#f6f3ed]/95 to-[#f6f3ed]" />
         </div>
       )}
 
       {/* Decorative Gold Radial Glow */}
-      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-amber-500/10 blur-[130px] rounded-full" />
+      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-amber-400/15 blur-[130px] rounded-full" />
 
       <div className="relative z-10 mx-auto max-w-5xl px-5 sm:px-8 text-center">
         <FadeIn>
-          <div className="inline-flex items-center gap-2 rounded-full border border-amber-400/30 bg-neutral-900/80 backdrop-blur-md px-4 py-1.5 text-xs font-semibold tracking-widest text-amber-300 uppercase shadow-lg">
-            <span className="h-1.5 w-1.5 rounded-full bg-amber-400 animate-pulse" />
+          <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/30 bg-white/90 backdrop-blur-md px-4 py-1.5 text-xs font-bold tracking-widest text-amber-800 uppercase shadow-xs">
+            <span className="h-1.5 w-1.5 rounded-full bg-amber-500 animate-pulse" />
             {badge}
           </div>
         </FadeIn>
 
         <FadeIn delay={0.1}>
-          <h1 className="mt-6 font-serif text-3xl font-normal tracking-tight text-white sm:text-5xl lg:text-6xl leading-[1.15]">
+          <h1 className="mt-6 font-serif text-3xl font-normal tracking-tight text-neutral-900 sm:text-5xl lg:text-6xl leading-[1.15]">
             {title}
           </h1>
         </FadeIn>
 
         <FadeIn delay={0.2}>
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-neutral-300 sm:text-lg">
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-neutral-700 sm:text-lg">
             {description}
           </p>
         </FadeIn>

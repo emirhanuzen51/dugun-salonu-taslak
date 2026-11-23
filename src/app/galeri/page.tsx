@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function GalleryPage() {
   return (
-    <main>
+    <main className="bg-[#fcfbfa]">
       <PageHero
         badge="Özel Kareler"
         title="Unutulmaz Davetlerden İlham Veren Kareler"
@@ -18,7 +18,7 @@ export default function GalleryPage() {
         image="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1600&q=85"
       />
 
-      <div className="bg-neutral-950">
+      <div className="bg-[#fcfbfa]">
         <GallerySection />
       </div>
     </main>

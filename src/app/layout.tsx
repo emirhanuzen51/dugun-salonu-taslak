@@ -5,6 +5,7 @@ import { venueConfig } from "@/lib/venue";
 import { Header, Footer } from "@/components/chrome";
 import { ModalProvider } from "@/components/modal-context";
 import { SmoothScroll } from "@/components/motion";
+import { LocationFloatingWidget } from "@/components/location-floating-widget";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
     "lüks balo salonu",
     "kır düğünü",
     "boğaz teras düğün",
-    "düğün fiyat hesaplama",
+    "organizasyon konseptleri",
     "ziyafet menüleri",
     "istanbul düğün mekanları",
   ],
@@ -63,19 +64,21 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="tr" className={`${cormorant.variable} ${jakarta.variable} dark scroll-smooth`}>
+    <html lang="tr" className={`${cormorant.variable} ${jakarta.variable} scroll-smooth`}>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="font-sans antialiased bg-neutral-950 text-white min-h-screen selection:bg-amber-400 selection:text-black">
+      <body className="font-sans antialiased bg-[#fcfbfa] text-[#1c1917] min-h-screen selection:bg-amber-400 selection:text-black">
         <SmoothScroll />
         <ModalProvider>
           <Header />
           <div className="relative z-10">{children}</div>
           <Footer />
+          {/* Sağda Dairesel Konum & Harita Butonu */}
+          <LocationFloatingWidget />
         </ModalProvider>
       </body>
     </html>

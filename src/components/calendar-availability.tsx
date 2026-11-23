@@ -22,17 +22,17 @@ export function CalendarAvailability({ onSelectDate }: { onSelectDate: (month: s
   const current = months.find((m) => m.name === selectedMonth) || months[2];
 
   return (
-    <section className="py-24 sm:py-32 bg-neutral-950 border-t border-white/10 relative">
+    <section className="py-24 sm:py-32 bg-[#fcfbfa] border-t border-amber-900/10 relative">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 rounded-full border border-amber-400/30 bg-neutral-900/80 px-4 py-1.5 text-xs font-semibold text-amber-300 uppercase tracking-widest">
-            <Calendar className="h-3.5 w-3.5" />
+          <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/30 bg-amber-500/10 px-4 py-1.5 text-xs font-bold text-amber-800 uppercase tracking-widest shadow-2xs">
+            <Calendar className="h-3.5 w-3.5 text-amber-600" />
             <span>2026 Takvimi & Erken Rezervasyon</span>
           </div>
-          <h2 className="mt-4 font-serif text-3xl sm:text-5xl font-normal text-white tracking-tight">
-            Düğün Tarihinizin <span className="italic bg-gradient-to-r from-amber-200 to-amber-400 bg-clip-text text-transparent">Müsaitliğini Sorgulayın</span>
+          <h2 className="mt-4 font-serif text-3xl sm:text-5xl font-normal text-neutral-900 tracking-tight">
+            Düğün Tarihinizin <span className="italic bg-gradient-to-r from-amber-700 via-amber-600 to-amber-800 bg-clip-text text-transparent">Müsaitliğini Sorgulayın</span>
           </h2>
-          <p className="mt-4 text-sm sm:text-base text-neutral-400 leading-relaxed">
+          <p className="mt-4 text-sm sm:text-base text-neutral-600 leading-relaxed font-normal">
             {venueName} bünyesinde her salonumuzda günde yalnızca tek bir düğün organize edilmektedir. Hayalinizdeki ay için yerinizi şimdiden ayırtın.
           </p>
         </div>
@@ -45,50 +45,50 @@ export function CalendarAvailability({ onSelectDate }: { onSelectDate: (month: s
               onClick={() => setSelectedMonth(m.name)}
               className={`rounded-2xl p-3 text-center border transition-all cursor-pointer ${
                 selectedMonth === m.name
-                  ? "border-amber-400 bg-amber-400/15 shadow-md"
-                  : "border-white/10 bg-neutral-900 text-neutral-400 hover:border-white/20"
+                  ? "border-amber-500 bg-amber-100/60 shadow-xs ring-1 ring-amber-500 text-neutral-950"
+                  : "border-amber-900/10 bg-white text-neutral-700 hover:border-amber-400"
               }`}
             >
-              <span className="block font-serif text-xs font-bold text-white">{m.name}</span>
-              <span className="mt-1 block text-[10px] text-amber-300 font-medium">{m.rate}</span>
+              <span className="block font-serif text-xs font-bold text-neutral-900">{m.name}</span>
+              <span className="mt-1 block text-[10px] text-amber-800 font-semibold">{m.rate}</span>
             </button>
           ))}
         </div>
 
         {/* Month Status Panel */}
-        <div className="mt-8 rounded-3xl border border-white/10 bg-neutral-900/60 p-6 sm:p-10 shadow-xl backdrop-blur-xl max-w-4xl mx-auto">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 border-b border-white/10 pb-6">
+        <div className="mt-8 rounded-3xl border border-amber-900/10 bg-white p-6 sm:p-10 shadow-[0_8px_30px_rgba(180,140,50,0.06)] max-w-4xl mx-auto">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 border-b border-amber-900/10 pb-6">
             <div>
-              <span className="rounded-full bg-amber-400/20 px-3 py-1 text-[11px] font-bold text-amber-300 uppercase">
+              <span className="rounded-full bg-amber-500/15 border border-amber-500/30 px-3 py-1 text-[11px] font-bold text-amber-800 uppercase">
                 {current.badge}
               </span>
-              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white mt-2">
+              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-neutral-900 mt-2">
                 {current.name} — {current.season}
               </h3>
-              <p className="text-xs text-neutral-400 mt-1">
-                Genel Doluluk Oranı: <strong className="text-amber-400">{current.rate}</strong> • Durum: {current.status}
+              <p className="text-xs text-neutral-600 mt-1">
+                Genel Doluluk Oranı: <strong className="text-amber-700">{current.rate}</strong> • Durum: {current.status}
               </p>
             </div>
 
             <button
               onClick={() => onSelectDate(current.name)}
-              className="rounded-xl bg-gradient-to-r from-amber-400 to-amber-300 px-6 py-3 text-xs font-bold text-neutral-950 shadow-md hover:brightness-110 active:scale-98 transition-all shrink-0 cursor-pointer"
+              className="rounded-xl bg-gradient-to-r from-amber-400 to-amber-300 px-6 py-3 text-xs font-bold text-neutral-950 shadow-xs hover:brightness-105 active:scale-98 transition-all shrink-0 cursor-pointer"
             >
               {current.name} İçin Tarih Blokla
             </button>
           </div>
 
-          <div className="mt-6 grid sm:grid-cols-3 gap-4 text-xs text-neutral-300">
-            <div className="rounded-xl border border-white/5 bg-neutral-900/80 p-4">
-              <span className="text-amber-400 font-semibold block mb-1">Cuma Akşamları</span>
-              <span>%15 Fiyat Avantajı & Kokteyl Prolonge uygunluğu</span>
+          <div className="mt-6 grid sm:grid-cols-3 gap-4 text-xs text-neutral-700">
+            <div className="rounded-2xl border border-amber-900/10 bg-amber-50/50 p-4">
+              <span className="text-amber-800 font-bold block mb-1">Cuma Akşamları</span>
+              <span>Özel fiyat avantajı & Kokteyl Prolonge uygunluğu</span>
             </div>
-            <div className="rounded-xl border border-white/5 bg-neutral-900/80 p-4">
-              <span className="text-amber-400 font-semibold block mb-1">Cumartesi Geceleri</span>
-              <span>En Popüler Tarihler, sınırlı opsiyon</span>
+            <div className="rounded-2xl border border-amber-900/10 bg-amber-50/50 p-4">
+              <span className="text-amber-800 font-bold block mb-1">Cumartesi Geceleri</span>
+              <span>En popüler tarihler, sınırlı opsiyon</span>
             </div>
-            <div className="rounded-xl border border-white/5 bg-neutral-900/80 p-4">
-              <span className="text-amber-400 font-semibold block mb-1">Pazar Öğle / Akşam</span>
+            <div className="rounded-2xl border border-amber-900/10 bg-amber-50/50 p-4">
+              <span className="text-amber-800 font-bold block mb-1">Pazar Öğle / Akşam</span>
               <span>Geniş aile buluşmaları ve kır bahçesi için ideal</span>
             </div>
           </div>

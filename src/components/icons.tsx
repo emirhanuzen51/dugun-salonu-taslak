@@ -11,8 +11,8 @@ export function Monogram({
     <div
       className={`relative flex items-center justify-center rounded-xl border transition-all duration-300 ${
         light
-          ? "border-amber-400/50 bg-neutral-900/90 text-amber-300 shadow-[0_0_20px_rgba(217,179,94,0.3)]"
-          : "border-amber-500/40 bg-gradient-to-b from-neutral-900 via-neutral-950 to-black text-amber-400 shadow-[0_4px_25px_rgba(217,179,94,0.2)]"
+          ? "border-amber-400/50 bg-white/95 text-amber-700 shadow-sm"
+          : "border-amber-500/30 bg-gradient-to-br from-amber-50 via-white to-amber-100/70 text-amber-700 shadow-xs"
       } ${className}`}
     >
       <svg
@@ -25,7 +25,7 @@ export function Monogram({
         <path
           d="M30 38L50 22L70 38L62 48H38L30 38Z"
           stroke="currentColor"
-          strokeWidth="3"
+          strokeWidth="3.5"
           strokeLinejoin="round"
           className="opacity-90"
         />
@@ -44,7 +44,7 @@ export function Monogram({
         <path
           d="M64 56C62 53 58 52 53 52C46 52 42 57 42 64C42 71 47 76 54 76C61 76 65 72 65 67H53"
           stroke="currentColor"
-          strokeWidth="4"
+          strokeWidth="4.5"
           strokeLinecap="round"
           strokeLinejoin="round"
         />

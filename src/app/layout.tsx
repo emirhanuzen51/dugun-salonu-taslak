@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     "boğaz teras düğün",
     "organizasyon konseptleri",
     "ziyafet menüleri",
-    "istanbul düğün mekanları",
+    "lüks düğün mekanları",
   ],
   authors: [{ name: venueConfig.shortName }],
   openGraph: {
@@ -55,7 +55,7 @@ export default function RootLayout({
     address: {
       "@type": "PostalAddress",
       streetAddress: venueConfig.address,
-      addressLocality: "İstanbul",
+      addressLocality: "Türkiye",
       addressCountry: "TR",
     },
     telephone: venueConfig.phone,

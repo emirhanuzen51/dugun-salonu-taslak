@@ -109,7 +109,7 @@ export default function ContactPage() {
                 {/* Map iframe container */}
                 <div className="mt-6 relative h-80 sm:h-96 w-full rounded-2xl overflow-hidden border border-amber-900/10 bg-neutral-100 shadow-xs">
                   <iframe
-                    title="Lumina Grand Konum"
+                    title="Düğün Salonu Konum Haritası"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48068.52085358925!2d29.022378!3d41.139624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab6138d4512e3%3A0x6b63d91cf95bf3e!2sSar%C4%B1yer%2C%20%C4%B0stanbul!5e0!3m2!1str!2str!4v1700000000000!5m2!1str!2str"
                     width="100%"
                     height="100%"

@@ -107,14 +107,14 @@ export const salons: Salon[] = [
   {
     id: "panorama-terrace",
     slug: "panorama-bogaz-teras",
-    name: "Panorama Boğaz Teras",
-    concept: "Modern Lounge & Deniz Manzaralı Teras",
+    name: "Panorama Teras Salonu",
+    concept: "Modern Lounge & Panoramik Teras",
     capacity: "600 Kişi Kapasite",
     capacityNumber: 600,
     area: "900 m²",
     ceilingHeight: "Açılır Kapanır Cam Tavan",
-    lead: "Gün batımında Boğaz'ın mavi sularına karşı kadeh kaldırılan, butik ve ultra modern teras atmosferi.",
-    description: "Panorama Boğaz Teras, seçkin ve butik davetler için tasarlanmış son derece zarif bir deneyim sunar. Kesintisiz 360 derece deniz ve koru manzarası, gün batımında fotoğraflar için eşsiz bir fon oluşturur. Akşamları lounge barda müzik ve kokteyl ritmi yükselirken açılır tavan sayesinde yıldızlar altında dans edebilirsiniz.",
+    lead: "Gün batımında gökyüzünün eşsiz renklerine karşı kadeh kaldırılan, butik ve ultra modern teras atmosferi.",
+    description: "Panorama Teras Salonu, seçkin ve butik davetler için tasarlanmış son derece zarif bir deneyim sunar. Kesintisiz 360 derece panoramik manzara, gün batımında fotoğraflar için eşsiz bir fon oluşturur. Akşamları lounge barda müzik ve kokteyl ritmi yükselirken açılır tavan sayesinde yıldızlar altında dans edebilirsiniz.",
     bestFor: "Butik Düğünler, Nikah & Kokteyl Davetleri, Kına Geceleri, After-Party",
     coverImage: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1600&q=85",
     gallery: [
@@ -136,7 +136,7 @@ export const salons: Salon[] = [
       { label: "Kokteyl / Parti", value: "900 Kişi" },
       { label: "Toplam Alan", value: "900 m²" },
       { label: "Tavan", value: "Otomatik Akıllı Cam Sistem" },
-      { label: "Manzara", value: "Panoramik Boğaz & Koru" },
+      { label: "Manzara", value: "360° Panoramik Manzara" },
       { label: "Ses Kısıtlaması", value: "Kapalı Modda Gece 03:00'e Kadar Serbest" },
     ],
     inclusions: [

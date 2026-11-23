@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
  * URL parametresi (?ad=Saray-Davet) girildiğinde sitedeki tüm başlıklar,
  * logolar, doküman başlığı ve WhatsApp yönlendirmeleri dinamik olarak güncellenir.
  */
-export function useIsletmeAdi(varsayilanAd = "Lumina Grand Davet & Balo") {
+export function useIsletmeAdi(varsayilanAd = "Düğün & Davet Salonu") {
   const [isletmeAdi, setIsletmeAdi] = useState(varsayilanAd);
 
   useEffect(() => {

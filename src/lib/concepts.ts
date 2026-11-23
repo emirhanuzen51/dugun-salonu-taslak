@@ -84,12 +84,12 @@ export const eventConcepts: EventConcept[] = [
   {
     id: "bogaz-teras-kokteyl",
     slug: "bogaz-teras-kokteyl-dugunu",
-    title: "Boğaz Manzaralı Teras & After Party",
-    shortTitle: "Boğaz Teras Düğünü",
+    title: "Panoramik Teras & After Party",
+    shortTitle: "Panoramik Teras Düğünü",
     category: "Düğün & Nikah",
-    tagline: "Panoramik Deniz Manzarası, Gün Batımı ve Gece Boyu Parti",
-    lead: "Boğaz'ın mavi sularına nazır açılır cam tavanlı modern teras, lounge bistro düzeni ve saat 03:00'e kadar süren kesintisiz eğlence.",
-    description: "Modern, dinamik ve eğlence odaklı çiftlerin bir numaralı tercihi olan Boğaz Teras konsepti, gün batımında nefes kesen manzarayla başlar. Zengin finger-food lezzetler, kokteyl prolonge ikramları ve gece ilerledikçe festival havasına bürünen DJ lazer şovuyla unutulmaz bir partiye dönüşür.",
+    tagline: "Panoramik Manzara, Gün Batımı ve Gece Boyu Parti",
+    lead: "Açılır cam tavanlı modern teras, lounge bistro düzeni ve saat 03:00'e kadar süren kesintisiz eğlence.",
+    description: "Modern, dinamik ve eğlence odaklı çiftlerin bir numaralı tercihi olan Panoramik Teras konsepti, gün batımında nefes kesen manzarayla başlar. Zengin finger-food lezzetler, kokteyl prolonge ikramları ve gece ilerledikçe festival havasına bürünen DJ lazer şovuyla unutulmaz bir partiye dönüşür.",
     coverImage: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1600&q=85",
     gallery: [
       "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80",

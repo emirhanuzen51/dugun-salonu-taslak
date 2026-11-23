@@ -12,7 +12,6 @@ import {
   MapPin,
   Menu,
   Phone,
-  Search,
   Sparkles,
   X,
 } from "lucide-react";
@@ -45,7 +44,7 @@ export function Header() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { openAppointment, openCommandPalette } = useModals();
+  const { openAppointment } = useModals();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -100,19 +99,6 @@ export function Header() {
 
           {/* Action Buttons */}
           <div className="flex items-center gap-2 sm:gap-3">
-            {/* Command Palette Trigger */}
-            <button
-              onClick={openCommandPalette}
-              aria-label="Arama"
-              className="flex items-center gap-2 rounded-xl border border-amber-900/10 bg-amber-50/60 px-3 py-2 text-xs text-neutral-600 hover:border-amber-500/40 hover:text-neutral-900 transition-all shadow-xs cursor-pointer"
-            >
-              <Search className="h-3.5 w-3.5 text-amber-600" />
-              <span className="hidden sm:inline font-medium">Ara</span>
-              <kbd className="hidden sm:inline rounded bg-white px-1.5 py-0.5 text-[10px] font-mono text-neutral-500 border border-neutral-200">
-                Ctrl K
-              </kbd>
-            </button>
-
             {/* Book Tour CTA */}
             <button
               onClick={() => openAppointment()}
